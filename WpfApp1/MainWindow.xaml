@@ -1,0 +1,171 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1024" ResizeMode="NoResize" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStartupLocation="CenterScreen"
+        
+        
+        WindowStyle="SingleBorderWindow">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Background" Value="WhiteSmoke"/>
+                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Height" Value="50"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="20,0,20,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Path Data="{TemplateBinding Tag}"
+                                          Style="{StaticResource {x:Type Path}}"/>
+                                    
+                                    <ContentPresenter Content="{TemplateBinding Content}"
+                                                      Grid.Column="1"
+                                                      TextBlock.TextAlignment="Left"                                                     
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="Silver"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border Background="WhiteSmoke"
+            CornerRadius="20">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <!--Left panel-->
+                <ColumnDefinition Width="250"/>
+                <!--Main-->                
+                <ColumnDefinition/>
+                <!--Right panel-->
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0">
+                    <Image Source="Images/PROSST.jpg" Width="250" Height="100" />
+                    <Separator VerticalAlignment="Bottom" Background="Silver"/>
+                </StackPanel>
+               <!-- DashBoard Button -->
+                <StackPanel Grid.Row="1" VerticalAlignment="Center"
+                            Width="200">
+                    <Button Content="DashBoard">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Height" Value="50" />
+                                <Setter Property="Width" Value="200"/>
+                                <Setter Property="Background" Value="LightGray"/>
+                                <Setter Property="Foreground" Value="Gray"/>
+                                <Setter Property="FontWeight" Value="SemiBold"/>
+                                <Setter Property="FontSize" Value="20"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border CornerRadius="25" 
+                                                    Background="{TemplateBinding Background}"
+                                                    BorderThickness="{TemplateBinding BorderThickness}">
+                                                <Grid>
+                                                    <Ellipse HorizontalAlignment="Left"
+                                                             Width="40"
+                                                             Height="40"                                                             
+                                                             Stroke="White"
+                                                             StrokeThickness="2"
+                                                             Margin="2 0">
+                                                        <Ellipse.Fill>
+                                                            <ImageBrush ImageSource="/Images/PROSST.jpg"
+                                                                Stretch="UniformToFill"/>
+                                                            
+                                                        </Ellipse.Fill>
+                                                    </Ellipse>
+                                                    <ContentPresenter Content="{TemplateBinding Content}"
+                                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                </Grid>
+                                                
+
+                                            </Border> 
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Grid Width="70" HorizontalAlignment="Left"
+                          Margin="0,10">
+                        <TextBlock Text="Logout"
+                                   FontSize="15"
+                                   VerticalAlignment="Center"
+                                   Foreground="LightGray"/>
+                        <Path HorizontalAlignment="Right"
+                              VerticalAlignment="Center"></Path>
+
+                    </Grid>
+                </StackPanel>
+                <Separator Grid.Row="1" VerticalAlignment="Bottom"
+                           Width="200"
+                           Background="LightGray"/>
+                
+                <!--Mune Button-->
+                <StackPanel Grid.Row="2"
+                            Width="200"
+                            Margin="0,10">
+                    <Button Style="{StaticResource MenuButtonStyle}"
+                            
+                            Content="Home">                        
+                    </Button>
+                    <Button Style="{StaticResource MenuButtonStyle}"
+                            
+                            Content="Home">
+                    </Button>
+                    <Button Style="{StaticResource MenuButtonStyle}"
+                           
+                            Content="Home">
+                    </Button>
+                    <Button Style="{StaticResource MenuButtonStyle}"
+                            
+                            Content="Home">
+                    </Button>
+                    <Button Style="{StaticResource MenuButtonStyle}"
+                            
+                            Content="Home">
+                    </Button>
+                </StackPanel>
+
+            </Grid>            
+        </Grid>  
+    </Border>
+</Window>
