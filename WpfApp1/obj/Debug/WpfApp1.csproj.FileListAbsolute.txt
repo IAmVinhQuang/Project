@@ -19,4 +19,3 @@ C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\bin\Debug\MaterialDesignThemes
 C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\obj\Debug\App.baml
 C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
-C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
