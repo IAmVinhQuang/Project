@@ -40,3 +40,13 @@ C:\Users\VinhQuang\Desktop\Project\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileI
 C:\Users\VinhQuang\Desktop\Project\WpfApp1\obj\Debug\WpfApp1.csproj.CopyComplete
 C:\Users\VinhQuang\Desktop\Project\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\VinhQuang\Desktop\Project\WpfApp1\obj\Debug\WpfApp1.pdb
+C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\obj\Debug\Views\ExportView.g.cs
+C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\obj\Debug\Views\ImportView.g.cs
+C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\obj\Debug\Views\InforView.g.cs
+C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\obj\Debug\Views\ExportView.baml
+C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\obj\Debug\Views\ImportView.baml
+C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\obj\Debug\Views\InforView.baml
+C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\obj\Debug\Views\HomeView.g.cs
+C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\obj\Debug\Views\HomeView.baml
+C:\Users\Prosst_VinhQuang\Desktop\WpfApp1\WpfApp1\obj\Debug\GeneratedInternalTypeHelper.g.cs

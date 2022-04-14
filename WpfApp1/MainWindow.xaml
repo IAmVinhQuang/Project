@@ -7,10 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="745" Width="1024" ResizeMode="NoResize" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:ViewModels="clr-namespace:WpfApp1.ViewModels"
+        xmlns:Views ="clr-namespace:WpfApp1.Views"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         FontSize="15"
         WindowStyle="SingleBorderWindow">
+     
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -55,10 +58,10 @@
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
-
             </Style>
-        </ResourceDictionary>
+        </ResourceDictionary>       
     </Window.Resources>
+    
     <Border Background="WhiteSmoke"
             CornerRadius="20">
         <Grid>
@@ -69,7 +72,7 @@
                 <!--Main-->
                 <ColumnDefinition/>
                 <!--Right panel-->
-                <ColumnDefinition Width="350"/>
+               
 
             </Grid.ColumnDefinitions>
             <Grid>
@@ -171,6 +174,8 @@
                             Margin="0,10">
                     <RadioButton 
                         IsChecked="True"
+                        Name="TrangChinhButton"
+                        Click="TrangChinhButton_Click"
                         Style="{StaticResource MenuButtonStyle}"
                         Content="Trang Chính"
                         GroupName="Menu"
@@ -178,19 +183,19 @@
                     </RadioButton>
                     <RadioButton 
                         Style="{StaticResource MenuButtonStyle}"
+                        Name="ImportButton" 
+                        Click="ImportButton_Click"
                         Content="Nhập Kho"
                         GroupName="Menu">
                     </RadioButton>
                     <RadioButton 
                         Style="{StaticResource MenuButtonStyle}"
+                        Name="ExportButton"
+                        Click="ExportButton_Click"
                         Content="Xuất Kho"
                         GroupName="Menu">
                     </RadioButton>
-                    <RadioButton 
-                        Style="{StaticResource MenuButtonStyle}"
-                        Content="Thông tin"
-                        GroupName="Menu">
-                    </RadioButton>
+                    
                 </StackPanel>
             </Grid>
 
@@ -200,16 +205,21 @@
                 Background="#e1e4e6">
                 <Grid 
                      Height="100"
-                    Margin="40,0, 0,0"
+                     Margin="40,0, 0,0"
                      VerticalAlignment="Top">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="200"/>
                     </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
                     <Border 
                         Background="WhiteSmoke" 
                         CornerRadius="10"
-                        Height="50">
+                        Height="50"
+                        Grid.Row="0">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="50"/>
@@ -236,7 +246,7 @@
                                     Foreground="Gray" RenderTransformOrigin="0.633,0.593"
                                     />
                             </StackPanel>
-                           
+
 
                             <TextBlock
                                 Grid.ColumnSpan="3"
@@ -246,7 +256,7 @@
                                 TextAlignment="Left"
                                 VerticalAlignment="Center"/>
 
-                            
+
 
                         </Grid>
                     </Border>
@@ -263,12 +273,23 @@
                             </Style>
                         </Button.Resources>
                         <Button.Content>
-                            <TextBlock Text="CREATE"></TextBlock>
+                            <TextBlock Text="SEARCH"></TextBlock>
                         </Button.Content>
-
-
                     </Button>
                 </Grid>
+
+                <Frame 
+                        x:Name="Main"
+                        NavigationUIVisibility="Hidden" 
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch" />
+                <ContentControl Content="{Binding CurrentViewModel}">
+                    <ContentControl.Resources>
+                        <DataTemplate DataType="{x:Type ViewModels:HomeViewModel}">
+                            <Views:HomeView/>
+                        </DataTemplate>
+                    </ContentControl.Resources>
+                </ContentControl>
             </Grid>
         </Grid>
     </Border>

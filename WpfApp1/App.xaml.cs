@@ -13,5 +13,15 @@ namespace WpfApp1
     /// </summary>
     public partial class App : Application
     {
-    }
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            MainWindow = new MainWindow()
+            {
+                DataContext = new ViewModels.MainViewModel()
+            };
+            
+
+            base.OnStartup(e);
+        }
+     }
 }

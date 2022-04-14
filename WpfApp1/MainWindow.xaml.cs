@@ -24,5 +24,26 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        private void TrangChinhButton_Click(object sender, RoutedEventArgs e)
+        {
+           Main.Content = new Views.HomeView();
+               
+        }
+
+        private void ImportButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Views.ImportView();
+        }
+
+        private void ExportButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Views.ExportView();
+        }
+
+        private void InforButton_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Views.InforView();
+        }
     }
 }
